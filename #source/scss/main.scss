@@ -1,0 +1,149 @@
+//Импорт шрифтов
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+//Импорт partial файлов
+@import "./partial/nullstyle";
+@import "./partial/header";
+@import "./partial/footer";
+
+//Переменные и шаблоны
+$main-text-color: #626262;
+$post-category-color: #b4ad9e;
+
+%post-content {
+  .post-category {
+    font-family: Ubuntu;
+    font-weight: 300;
+    color: $post-category-color;
+    text-transform: uppercase;
+  }
+  .post-header {
+    font-size: 30px;
+    padding: 30px 0px;
+  }
+  .post-body {
+    line-height: 1.71;
+  }
+}
+
+//Настройка основного шрифта страницы
+body {
+  font-family: "Playfair Display";
+  font-size: 14px;
+  color: $main-text-color;
+}
+
+//Стили блока main
+.main-img-container {
+  margin: 0px 69px 99px 70px;
+  img {
+    width: 100%;
+  }
+}
+
+.fullwidth-post-container {
+  padding: 0px 149px 0px 158px;
+
+  @extend %post-content;
+
+  form > textarea {
+    margin: 50px 0px 100px 0px;
+    font-family: Ubuntu;
+    font-weight: 300;
+    resize: none;
+    color: $main-text-color;
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $post-category-color;
+      opacity: 1; /* Firefox */
+    }
+
+    &::-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: $post-category-color;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: $post-category-color;
+    }
+
+    &:focus {
+      border-bottom: solid;
+      border-width: 1px;
+    }
+  }
+}
+
+.posts-grid {
+  padding-inline: 150px;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+
+  .small-post-container {
+    margin-bottom: 135px;
+    &:nth-child(odd) {
+      grid-column: 1/8;
+    }
+    &:nth-child(even) {
+      grid-column: 9/16;
+    }
+    .post-img-container {
+      margin-bottom: 30px;
+      img {
+        width: 100%;
+      }
+    }
+
+    @extend %post-content;
+
+    .post-body {
+      max-height: 100px;
+      overflow: hidden;
+    }
+  }
+}
+
+.signup-container {
+  margin-left: 55px;
+  margin-bottom: 90px;
+  padding-top: 40px;
+  padding-bottom: 110px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    font-size: 30px;
+    letter-spacing: 0.75px;
+    color: #333;
+    margin-bottom: 85px;
+  }
+  .form-container {
+    padding-bottom: 9px;
+    border-bottom: solid;
+    border-width: 1px;
+    .useremail-input {
+      width: 367px;
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  .load-more-btn {
+    padding: 21px 34px;
+    font-size: 20px;
+    color: $main-text-color;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $main-text-color;
+    &:hover {
+      background: #f0f0f0;
+    }
+  }
+}

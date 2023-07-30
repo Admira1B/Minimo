@@ -1,0 +1,54 @@
+//Импорт шрифтов
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+
+//Переменные
+$header-background-color: #ffffff;
+$logo-text-color: #000;
+$navigation-text-color: #626262;
+$header-shadow-color: #1d1d1d;
+
+//Стили блока header
+header {
+  padding: 68px 68px 72px 69px;
+  background-color: $header-background-color;
+  width: 100%;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .logo {
+    grid-column: 1/2;
+    a {
+      font-family: Inconsolata;
+      font-size: 30px;
+      line-height: 0.8;
+      letter-spacing: 6px;
+      text-align: center;
+      color: $logo-text-color;
+      &:hover {
+        text-shadow: 0px 0px 20px $header-shadow-color;
+      }
+    }
+  }
+
+  .nav-list {
+    grid-column: 2/3;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      a {
+        font-family: "Playfair Display";
+        font-size: 14px;
+        line-height: 1.71;
+        color: $navigation-text-color;
+        &:hover {
+          color: #000;
+          text-shadow: 0px 0px 15px $header-shadow-color;
+        }
+      }
+    }
+  }
+}

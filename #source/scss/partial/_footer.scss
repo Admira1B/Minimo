@@ -1,0 +1,47 @@
+//Переменные и шаблоны
+$footer-background-color: #f0f0f0;
+$footer-text-color: #000;
+$hover-shadow-color: #1d1d1d;
+$text-hover-color: #b3b3b3;
+
+%navigation-list {
+  ul {
+    display: flex;
+    flex-direction: row;
+    a {
+      font-family: "Playfair Display";
+      font-size: 14px;
+      color: $footer-text-color;
+      margin-right: 18px;
+      &:hover {
+        color: $text-hover-color;
+      }
+    }
+  }
+}
+
+//Стили блока footer
+footer {
+  width: 100%;
+  margin-top: 100px;
+  background-color: $footer-background-color;
+  height: 97px;
+}
+
+.footer-navbar {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 40px 71px 45px 150px;
+
+  .documentation-container {
+    grid-column: 1/2;
+    @extend %navigation-list;
+  }
+
+  .social-medias-container {
+    display: flex;
+    flex-direction: row-reverse;
+    grid-column: 2/3;
+    @extend %navigation-list;
+  }
+}
