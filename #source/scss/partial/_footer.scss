@@ -8,11 +8,18 @@ $text-hover-color: #b3b3b3;
   ul {
     display: flex;
     flex-direction: row;
+    justify-items: center;
+
     a {
       font-family: "Playfair Display";
       font-size: 14px;
       color: $footer-text-color;
       margin-right: 18px;
+
+      img {
+        padding-top: 5px;
+      }
+
       &:hover {
         color: $text-hover-color;
       }
@@ -22,7 +29,6 @@ $text-hover-color: #b3b3b3;
 
 //Стили блока footer
 footer {
-  width: 100%;
   margin-top: 100px;
   background-color: $footer-background-color;
   height: 97px;
